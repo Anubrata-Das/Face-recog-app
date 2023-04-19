@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing import image
 from keras.models import model_from_json
 from cvzone.FaceDetectionModule import FaceDetector
 from PIL import Image, ImageDraw
-
+import cmake
 
 def detect_faces(our_image):
 	image_to_detect =  np.array(our_image.convert('RGB'))
@@ -420,11 +420,6 @@ def main():
 
 			elif feature_choice == 'Recognition':
 				#load the sample images and get the 128 face embeddings from them
-				modi_image = face_recognition.load_image_file('images/modi.jpg')
-				modi_face_encodings = face_recognition.face_encodings(modi_image)[0]
-
-				trump_image = face_recognition.load_image_file('images/trump.jpg')
-				trump_face_encodings = face_recognition.face_encodings(trump_image)[0]
 
 				anu_image = face_recognition.load_image_file('images/me.jpg')
 				anu_face_encodings = face_recognition.face_encodings(anu_image)[0]
@@ -434,7 +429,7 @@ def main():
 
 				#save the encodings and the corresponding labels in seperate arrays in the same order
 				known_face_encodings = [modi_face_encodings, trump_face_encodings, anu_face_encodings, ank_face_encodings]
-				known_face_names = ["Narendra Modi", "Donald Trump", "Anubrata","Ankush"]
+				known_face_names = [ "Anubrata","Ankush"]
 
 
 				#initialize the array variable to hold all face locations, encodings and names 
