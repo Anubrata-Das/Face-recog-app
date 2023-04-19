@@ -8,7 +8,6 @@ import face_recognition
 import dlib
 from tensorflow.keras.preprocessing import image
 from keras.models import model_from_json
-import tensorflow
 from cvzone.FaceDetectionModule import FaceDetector
 from PIL import Image, ImageDraw
 
